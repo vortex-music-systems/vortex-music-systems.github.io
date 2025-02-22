@@ -58,7 +58,6 @@ async function fetchMusicList() {
 // Called when the player is ready
 function onPlayerReady(event) {
   console.log('Player is ready.');
-  event.target.playVideo();
 }
 
 // Called when the player's state changes
