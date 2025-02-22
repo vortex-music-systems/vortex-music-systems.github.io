@@ -8,7 +8,7 @@
 <body>
     <div id="MusicTile" hidden></div>
     <div id="yt-player-test" hidden></div>
-    <div id="player-options" style="color: white;">
+    <div id="player-options">
         <img src="img/1.png" onclick="PlayPauseButton()" width="100" height="100" id="playorpause">
         <img src="img/3.png" onclick="playNextVideo()" width="100" height="100">
         <p id="SongTitle"></p>
@@ -20,6 +20,12 @@
   /* visibility: hidden; */ /* Hide the iframe but keep its space */
   /* OR */
   /* position: absolute; left: -9999px; */ /* Move the iframe off-screen */
+}
+#player-options {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #MusicTile {
