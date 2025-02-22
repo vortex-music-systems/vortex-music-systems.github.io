@@ -6,7 +6,9 @@
     <title>vortex_ - Music</title>
 </head>
 <body>
-    <iframe src="Home/tilesandyeah.html" width="500" height="500" style="border: none;"></iframe>
+    <div id="MusicTile" onclick="player.playVideo()">
+        <h1>Xenogenesis</h1>
+    </div>
     <div id="yt-player-test" hidden></div>
     <div id="player-options" style="background-color: darkgrey;">
         <img src="img/1.png" onclick="PlayPauseButton()" width="100" height="100" id="playorpause">
@@ -19,6 +21,14 @@
   /* visibility: hidden; */ /* Hide the iframe but keep its space */
   /* OR */
   /* position: absolute; left: -9999px; */ /* Move the iframe off-screen */
+}
+
+#MusicTile {
+    border-radius: 25px;
+    background: cadetblue;
+    padding: 20px;
+    width: 200px;
+    height: 150px;
 }
     </style>
     <script src="music-loader.js"></script>
