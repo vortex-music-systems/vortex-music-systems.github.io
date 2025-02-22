@@ -4,6 +4,7 @@ var player;
 var currentVideoIndex = 0; 
 var videoIds = []; 
 
+
 function initializeYouTubePlayer() {
   var tag = document.createElement('script');
   tag.src = "player_api";
@@ -67,10 +68,12 @@ function PlayPauseButton() {
         buttonimg.src = "img/2.png"
         player.playVideo()
         playorpause = "pause"
+        musicLabel_E()
     } else {
         buttonimg.src = "img/1.png"
         player.pauseVideo() 
         playorpause = "play"
+        musicLabel_E()
     }
 }
 
@@ -81,10 +84,11 @@ function playNextVideo() {
   buttonimg.src = "img/2.png"
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
+  setTimeout(musicLabel_E, 500)
 }
 
 function musicLabel_E() {
-  songlabel.innerHTML = "Now playing: "+player.videoTitle
+  songlabel.innerHTML = player.videoTitle
 }
 
 function loadPlaylist(playlistID) {
