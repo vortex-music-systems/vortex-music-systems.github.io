@@ -69,8 +69,8 @@ function onPlayerStateChange(event) {
   }
 }
 var playorpause = "play";
+var buttonimg = document.getElementById("playorpause");
 function PlayPauseButton() {
-    var buttonimg = document.getElementById("playorpause");
     if (playorpause == "play") {
         buttonimg.src = "img/2.png"
         player.playVideo()
@@ -86,6 +86,8 @@ function PlayPauseButton() {
 function playNextVideo() {
   currentVideoIndex = (currentVideoIndex + 1) % videoIds.length; // Loop back to the start if at the end
   const nextVideoId = videoIds[currentVideoIndex];
+  buttonimg.src = "img/2.png"
+  playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
 }
 
