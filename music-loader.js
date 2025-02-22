@@ -91,6 +91,10 @@ function playNextVideo() {
   buttonimg.src = "img/2.png"
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
+  setTimeout(musicLabel_E, 2000)
+}
+
+function musicLabel_E() {
   songlabel.innerHTML = "Now playing: "+player.videoTitle
 }
 
