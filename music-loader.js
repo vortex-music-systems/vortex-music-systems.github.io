@@ -1,23 +1,18 @@
 var music_list = 'music_list.json';
 
-// Global variable to store the YouTube player instance
 var player;
-var currentVideoIndex = 0; // Track the current video index in the music list
-var videoIds = []; // Store the video IDs extracted from the JSON
+var currentVideoIndex = 0; 
+var videoIds = []; 
 
-// Function to initialize the YouTube player
 function initializeYouTubePlayer() {
-  // Load the YouTube IFrame API script asynchronously
   var tag = document.createElement('script');
   tag.src = "player_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-  // Define the global callback function for when the API is ready
   window.onYouTubePlayerAPIReady = function () {
     console.log("YouTube Player API is ready.");
     if (videoIds.length > 0) {
-      // Initialize the player with the first video in the list
       player = new YT.Player('yt-player-test', {
         height: '390',
         width: '640',
@@ -34,7 +29,7 @@ function initializeYouTubePlayer() {
   };
 }
 var ete = document.getElementById("yt-player-test")
-// Fetch the music list from the JSON file
+
 async function fetchMusicList() {
   try {
     const response = await fetch(music_list);
@@ -44,11 +39,8 @@ async function fetchMusicList() {
     const data = await response.json();
     console.log('Fetched music list:', data);
 
-    // Extract video IDs from the "BeatsID" object
-    videoIds = Object.values(data.BeatsID); // Convert object values to an array of video IDs
+    videoIds = Object.values(data.BeatsID); 
     console.log('Extracted video IDs:', videoIds);
-
-    // Initialize the YouTube player after fetching the music list
     initializeYouTubePlayer();
   } catch (error) {
     console.error('Fetch error:', error);
