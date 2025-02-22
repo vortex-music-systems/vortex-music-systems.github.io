@@ -69,14 +69,17 @@ function onPlayerStateChange(event) {
 }
 var playorpause = "play";
 var buttonimg = document.getElementById("playorpause");
+var songlabel = document.getElementById("SongTitle");
 function PlayPauseButton() {
     if (playorpause == "play") {
         buttonimg.src = "img/2.png"
         player.playVideo()
         playorpause = "pause"
+        songlabel.innerHTML = "Now playing: "+player.videoTitle
     } else {
         buttonimg.src = "img/1.png"
         player.pauseVideo() 
+        songlabel.innerHTML = "Now playing: "+player.videoTitle
         playorpause = "play"
     }
 }
@@ -88,6 +91,7 @@ function playNextVideo() {
   buttonimg.src = "img/2.png"
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
+  songlabel.innerHTML = "Now playing: "+player.videoTitle
 }
 
 fetchMusicList();
