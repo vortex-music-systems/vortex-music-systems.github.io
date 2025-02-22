@@ -90,4 +90,8 @@ function musicLabel_E() {
   songlabel.innerHTML = "Now playing: "+player.videoTitle
 }
 
+function loadPlaylist(playlistID) {
+  
+}
+
 fetchMusicList();
