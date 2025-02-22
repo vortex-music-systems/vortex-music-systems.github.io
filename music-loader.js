@@ -67,7 +67,7 @@ function onPlayerStateChange(event) {
     playNextVideo(); // Play the next video when the current one ends
   }
 }
-var playorpause = "play";
+var playorpause = "pause";
 var buttonimg = document.getElementById("playorpause");
 function PlayPauseButton() {
     if (playorpause == "play") {
