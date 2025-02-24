@@ -96,6 +96,10 @@ function musicLabel_E() {
     songlabel.innerHTML = player.videoTitle
   }
 
+  if (oldvideoName == "Joy") {
+    player.pauseVideo()
+  }
+
 }
 
 function loadPlaylist(playlistID) {
