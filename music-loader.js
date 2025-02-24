@@ -3,7 +3,7 @@ var music_list = 'music_list.json';
 var player;
 var currentVideoIndex = 0; 
 var videoIds = []; 
-
+var oldvideoName;
 
 function initializeYouTubePlayer() {
   var tag = document.createElement('script');
@@ -84,12 +84,18 @@ function playNextVideo() {
   buttonimg.src = "img/2.png"
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
-  setTimeout(loadPlaylist, 600)
+  oldvideoName = player.videoTitle
+  setTimeout(loadPlaylist, 999)
   musicLabel_E()
 }
 
 function musicLabel_E() {
-  songlabel.innerHTML = player.videoTitle
+  if (oldvideoName == player.videoTitle) {
+    console.error("ERROR: Couldn't set title")
+  } else {
+    songlabel.innerHTML = player.videoTitle
+  }
+
 }
 
 function loadPlaylist(playlistID) {
