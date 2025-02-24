@@ -91,7 +91,7 @@ function playNextVideo() {
 function musicLabel_E() {
   if (oldvideoName == player.videoTitle) {
     console.error("ERROR: Couldn't set title")
-    setTimeout(musicLabel_E, 500)
+    musicLabel_E()
   } else {
     songlabel.innerHTML = player.videoTitle
   }
