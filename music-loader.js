@@ -96,11 +96,6 @@ function musicLabel_E() {
     setTimeout(null, 500)
     songlabel.innerHTML = player.videoTitle
   }
-
-  if (oldvideoName == "Joy") {
-    player.pauseVideo()
-  }
-
 }
 
 function loadPlaylist(playlistID) {
