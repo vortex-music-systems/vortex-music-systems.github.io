@@ -93,6 +93,7 @@ function musicLabel_E() {
     console.error("ERROR: Couldn't set title")
     setTimeout(musicLabel_E, 500)
   } else {
+    setTimeout(null, 500)
     songlabel.innerHTML = player.videoTitle
   }
 
