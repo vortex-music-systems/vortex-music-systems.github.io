@@ -85,7 +85,6 @@ function playNextVideo() {
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
   oldvideoName = player.videoTitle
-  setTimeout(loadPlaylist, 999)
   musicLabel_E()
 }
 
