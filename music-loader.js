@@ -84,7 +84,8 @@ function playNextVideo() {
   buttonimg.src = "img/2.png"
   playorpause = "pause"
   player.loadVideoById(nextVideoId); // Load and play the next video
-  setTimeout(musicLabel_E, 1500)
+  setTimeout(loadPlaylist, 600)
+  musicLabel_E()
 }
 
 function musicLabel_E() {
@@ -92,7 +93,7 @@ function musicLabel_E() {
 }
 
 function loadPlaylist(playlistID) {
-  
+  console.log("yay i did something")
 }
 
 fetchMusicList();
