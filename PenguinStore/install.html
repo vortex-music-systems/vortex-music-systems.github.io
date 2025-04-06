@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>Installer</title>
+  </head>
+  <body>
+    <h1>You can now close the app..</h1>
+    <iframe hidden id="e"></iframe>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+
+      var InstallName = urlParams.get("installp")
+      var Installer = document.getElementById("e")
+      Installer.src = "/"+InstallName
+      
+    </script>
+  </body>
+</html>
