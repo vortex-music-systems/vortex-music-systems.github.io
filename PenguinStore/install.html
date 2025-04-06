@@ -10,8 +10,8 @@
       const urlParams = new URLSearchParams(queryString);
 
       var InstallName = urlParams.get("installp")
-      var Installer = document.getElementById("e")
-      Installer.src = "/"+InstallName
+      var e2 = window.open(InstallName)
+      e2.close()
       
     </script>
   </body>
